@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+
+VERSION = '0.0.1'
+
+def configure
+  p ENV['HOME']
+  print 'wwwww: '
+  input = STDIN.gets.chomp
+  p input
+end
+
+def version
+  puts "v#{VERSION}"
+end
+
+def main
+  sub_command = ARGV[0]
+  eval(sub_command)
+end
+
+#main
+
+class CommitGenius
+  def execute
+    p instance_methods(false)
+  end
+
+  private
+  def hoge
+  end
+end
+
+CommitGenius.new.execute
